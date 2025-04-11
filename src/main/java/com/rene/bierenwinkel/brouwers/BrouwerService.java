@@ -9,9 +9,9 @@ import java.util.List;
 @Transactional(readOnly = true)
 public class BrouwerService {
     private final BrouwerRepository brouwerRepository;
+
     public BrouwerService(BrouwerRepository brouwerRepository) {
         this.brouwerRepository = brouwerRepository;
-
     }
 
     List<Brouwer> findAllBrouwers() {

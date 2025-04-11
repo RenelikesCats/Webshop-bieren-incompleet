@@ -1,8 +1,9 @@
 package com.rene.bierenwinkel.bieren;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.rene.bierenwinkel.bieren.dto.BiernaamBrouwerNaamAlcPrijsDTO;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("bieren")
@@ -17,5 +18,15 @@ public class BierController {
     @GetMapping("/findAantalBieren")
     Long findAantalBieren() {
         return bierService.findAantalBieren();
+    }
+
+    @GetMapping("/brouwer/{id}")
+    List<BiernaamBrouwerNaamAlcPrijsDTO> findBierenByBrouwerId(@PathVariable long id) {
+        return bierService.findBierenByBrouwerId(id).stream().map(BiernaamBrouwerNaamAlcPrijsDTO::new).toList();
+    }
+
+    @GetMapping("/brouwer/aantal/{id}")
+    long countBierenByBrouwerId(@PathVariable long id) {
+        return bierService.countBierenByBrouwerId(id);
     }
 }

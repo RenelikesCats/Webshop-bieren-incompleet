@@ -1,8 +1,10 @@
 package com.rene.bierenwinkel.brouwers;
 
+import com.rene.bierenwinkel.bieren.Bier;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+
+import java.util.Collections;
+import java.util.Set;
 
 @Entity
 @Table(name = "brouwers")
@@ -23,6 +25,9 @@ public class Brouwer {
     private String gemeente;
 
     private Long omzet;
+
+    @OneToMany
+    private Set<Bier> bieren;
 
     public Brouwer(String naam, String straat, Short postcode, String huisNr, String gemeente, Long omzet) {
         this.naam = naam;
@@ -62,5 +67,9 @@ public class Brouwer {
 
     public Long getOmzet() {
         return omzet;
+    }
+
+    public Set<Bier> getBieren() {
+        return Collections.unmodifiableSet(bieren);
     }
 }

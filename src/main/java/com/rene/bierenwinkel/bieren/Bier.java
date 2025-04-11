@@ -18,15 +18,15 @@ public class Bier {
     @JoinColumn(name = "brouwerId")
     private Brouwer brouwer;
 
-    private BigDecimal alcohol;
+    private long alcohol;
 
-    private BigDecimal prijs;
+    private long prijs;
 
 
     @Column(name = "besteld")
     private Long besteld;
 
-    public Bier(String naam, Brouwer brouwer, BigDecimal alcohol, BigDecimal prijs, Long besteld) {
+    public Bier(String naam, Brouwer brouwer, long alcohol, long prijs, Long besteld) {
         this.naam = naam;
         this.brouwer = brouwer;
         this.alcohol = alcohol;
@@ -49,11 +49,11 @@ public class Bier {
         return naam;
     }
 
-    public BigDecimal getAlcohol() {
+    public long getAlcohol() {
         return alcohol;
     }
 
-    public BigDecimal getPrijs() {
+    public long getPrijs() {
         return prijs;
     }
 

@@ -20,5 +20,4 @@ public class BrouwerController {
     Stream<BrouwerNaamGemeentePostcode> findAll() {
         return brouwerService.findAllBrouwers().stream().map(BrouwerNaamGemeentePostcode::new);
     }
-
 }
