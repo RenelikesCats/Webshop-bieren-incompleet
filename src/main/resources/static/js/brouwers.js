@@ -4,7 +4,7 @@ const brouwersLijst = document.getElementById("brouwersLijst");
 
 document.addEventListener("DOMContentLoaded", async () => {
     const brouwers = await getBrouwers();
-    brouwers !== null ? verwerkBrouwers(brouwers) : console.error("Brouwer not found");
+    brouwers !== null ? await verwerkBrouwers(brouwers) : console.error("Brouwer not found");
 })
 
 async function getBrouwers() {

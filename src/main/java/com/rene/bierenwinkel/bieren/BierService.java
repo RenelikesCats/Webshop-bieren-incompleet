@@ -18,6 +18,10 @@ public class BierService {
         return bierRepository.count();
     }
 
+    List<Bier> findAll(){
+        return bierRepository.findAll();
+    }
+
     List<Bier> findBierenByBrouwerId(long id) {
         return bierRepository.findBierenByBrouwerId(id);
 
