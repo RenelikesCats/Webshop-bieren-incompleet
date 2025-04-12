@@ -12,11 +12,9 @@ import java.util.stream.Stream;
 public class BierController {
 
     private final BierService bierService;
-    private final BierRepository bierRepository;
 
-    public BierController(BierService bierService, BierRepository bierRepository) {
+    public BierController(BierService bierService) {
         this.bierService = bierService;
-        this.bierRepository = bierRepository;
     }
 
     @Operation(summary = "Geeft aantal bieren terug van hele DB. Wordt gebruikt op index.html")
@@ -32,7 +30,7 @@ public class BierController {
     }
 
     @Operation(summary = "Geeft alle bieren van een specifiek brouwer")
-    @GetMapping("/brouwer/{id}")
+    @GetMapping("/{id}")
     List<BiernaamBrouwerNaamAlcPrijsDTO> findBierenByBrouwerId(@PathVariable long id) {
         return bierService.findBierenByBrouwerId(id).stream().map(BiernaamBrouwerNaamAlcPrijsDTO::new).toList();
     }

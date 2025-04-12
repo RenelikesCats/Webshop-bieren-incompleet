@@ -56,6 +56,7 @@ async function verwerkBrouwers(brouwers) {
 
         div.addEventListener("click", () => {
             sessionStorage.setItem("brouwerId", brouwer.id);
+            window.location = "/alleBierenVanEenBrouwer.html";
         });
     }
 }
