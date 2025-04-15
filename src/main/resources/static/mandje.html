@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winkelmandje - Belgian Beer Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="js/mandje.js" defer></script>
+</head>
+<body class="bg-gray-100 font-sans">
+<header class="bg-yellow-500 py-4 shadow-md">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <div>
+      <a href="/" class="text-2xl font-bold text-white hover:underline">Belgian Beer Shop</a>
+    </div>
+    <div class="text-4xl cursor-pointer p-2 relative">
+      <a href="/mandje.html">
+        <img src="images/cart.png" id="mandje" width="45" alt="winkelmandje"/>
+        <span id="mandje-aantal" class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center transform translate-x-1/2 -translate-y-1/2">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container mx-auto py-8 px-4">
+  <section class="mb-8 hidden" >
+    <h2 class="text-3xl font-semibold mb-4 text-center">Uw Winkelmandje</h2>
+    <div id="cart-items-container">
+      <p class="text-gray-600 text-center">Uw winkelmandje is momenteel leeg.</p>
+    </div>
+  </section>
+
+  <section id="cart-summary" class="bg-white rounded-lg shadow-md p-6  ">
+    <h3 class="text-xl font-semibold mb-4">Bestellingsoverzicht</h3>
+    <div class="mb-4">
+      <p>Totaal aantal items: <span id="total-items">0</span></p>
+      <p>Subtotaal: <span id="subtotal">€ 0.00</span></p>
+      <p>Verzendkosten: <span id="shipping-cost">€ 5.00</span></p>
+      <p class="font-semibold">Totaal: <span id="total">€ 0.00</span></p>
+    </div>
+    <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+      Ga door naar afrekenen
+    </button>
+  </section>
+</main>
+
+<footer class="bg-gray-300 py-4 text-center text-gray-700 text-sm">
+  <p>&copy; 2025 All rights reserved.</p>
+</footer>
+</body>
+</html>

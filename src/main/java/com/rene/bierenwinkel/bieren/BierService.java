@@ -30,4 +30,6 @@ public class BierService {
     long countBierenByBrouwerId(long id) {
         return bierRepository.countBierByBrouwer_Id(id);
     }
+
+
 }

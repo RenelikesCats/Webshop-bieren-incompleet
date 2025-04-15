@@ -67,7 +67,8 @@ function verwerkBieren(bieren) {
 }
 
 function filterBieren() {
-    const zoekTerm = zoekInput.value.toLowerCase();
+
+    const zoekTerm = zoekInput.value.toLowerCase().trim();
     const gefilterdeBieren = alleBierenData.filter(bier => {
         return (
             bier.bierNaam.toLowerCase().includes(zoekTerm) || bier.brouwerNaam.toLowerCase().includes(zoekTerm)

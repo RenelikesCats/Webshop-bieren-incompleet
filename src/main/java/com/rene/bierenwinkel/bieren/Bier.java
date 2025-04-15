@@ -22,11 +22,9 @@ public class Bier {
 
     private long prijs;
 
+    private int besteld;
 
-    @Column(name = "besteld")
-    private Long besteld;
-
-    public Bier(String naam, Brouwer brouwer, long alcohol, long prijs, Long besteld) {
+    public Bier(String naam, Brouwer brouwer, long alcohol, long prijs, int besteld) {
         this.naam = naam;
         this.brouwer = brouwer;
         this.alcohol = alcohol;
@@ -35,6 +33,10 @@ public class Bier {
     }
 
     protected Bier() {
+    }
+
+    public void bestel(int aantal) {
+        besteld += aantal;
     }
 
     public Long getId() {
@@ -57,7 +59,7 @@ public class Bier {
         return prijs;
     }
 
-    public Long getBesteld() {
+    public int getBesteld() {
         return besteld;
     }
 }

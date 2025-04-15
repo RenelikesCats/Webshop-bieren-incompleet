@@ -40,4 +40,6 @@ public class BierController {
     long countBierenByBrouwerId(@PathVariable long id) {
         return bierService.countBierenByBrouwerId(id);
     }
+
+
 }

@@ -9,9 +9,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function getAantalBieren() {
     const response = await fetch(`http://localhost:8080/bieren/findAantalBieren`)
+
     if (response.ok) {
         return await response.json()
     }
     return null
 }
+
+
 

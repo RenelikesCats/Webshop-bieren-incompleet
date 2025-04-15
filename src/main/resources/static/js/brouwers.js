@@ -18,11 +18,11 @@ async function getBrouwers() {
 async function verwerkBrouwers(brouwers) {
     for (const brouwer of brouwers) {
         const div = document.createElement("div");
-        div.className = "bg-white rounded-lg shadow-md p-6 cursor-pointer hover:bg-yellow-500";
+        div.className = "bg-white rounded-lg shadow-md p-6 cursor-pointer ";
         brouwersLijst.appendChild(div);
 
         const naamElement = document.createElement("h3");
-        naamElement.className = "text-lg font-semibold mb-2";
+        naamElement.className = "text-lg font-semibold mb-2 hover:bg-yellow-400 p-4 rounded-full text-center";
         naamElement.textContent = brouwer.naam;
         div.appendChild(naamElement);
 
@@ -54,7 +54,7 @@ async function verwerkBrouwers(brouwers) {
             detailsElement.appendChild(adresElement);
         }
 
-        div.addEventListener("click", () => {
+        naamElement.addEventListener("click", () => {
             sessionStorage.setItem("brouwerId", brouwer.id);
             window.location = "/alleBierenVanEenBrouwer.html";
         });
