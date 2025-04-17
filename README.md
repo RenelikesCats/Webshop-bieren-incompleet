@@ -4,7 +4,7 @@ Bieren Webshop Concept
 
 -De data in de database is van fictieve aard en representeert geen werkelijke producten
 
--Gebruikte technologieën 
+Gebruikte technologieën:
 
 Back-end: Java met dependencies (Spring web, JDBC API, Spring Data JPA MySql Driver, Spring boot devtools, OpenAPI/Swagger)
 
