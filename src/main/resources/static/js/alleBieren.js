@@ -46,6 +46,7 @@ async function getAlleBieren(pad) {
 }
 
 function verwerkBieren(bieren) {
+    const body = document.getElementById('bierenLijstBody');
     body.innerHTML = "";
 
     if (!bieren || !Array.isArray(bieren)) {
@@ -59,11 +60,53 @@ function verwerkBieren(bieren) {
 
         data.forEach(item => {
             const td = document.createElement('td');
-            td.className = "px-6 py-4 whitespace-nowrap text-md text-gray-700";
+            td.className = "px-6 py-4 text-md text-gray-700";
             td.innerText = item;
             tr.appendChild(td);
         });
+
+        // Nieuwe cel voor de toevoegen knop
+        const actieCell = document.createElement('td');
+        actieCell.className = "px-6 py-4 text-md text-gray-700";
+
+        const addButton = document.createElement('button');
+        addButton.textContent = 'Toevoegen';
+        addButton.classList.add("bg-green-500", "hover:bg-green-700", "text-white", "font-bold", "py-2", "px-4", "rounded");
+        addButton.addEventListener('click', () => {
+           addToMandje(bier)
+
+        });
+
+        actieCell.appendChild(addButton);
+        tr.appendChild(actieCell);
     });
+}
+
+function addToMandje(bestelling) {
+    let bestellingInMandje = {
+        bierId: bestelling.id,
+        bierNaam:bestelling.bierNaam,
+        prijs:bestelling.prijs,
+        aantal: 1
+    };
+
+    let mandje = JSON.parse(sessionStorage.getItem("mandje")) || [];
+    let bestaandeItem = mandje.find(item => item.bierId === bestellingInMandje.bierId);
+
+    if (bestaandeItem) {
+        bestaandeItem.aantal++;
+    } else {
+        mandje.push(bestellingInMandje);
+    }
+
+    sessionStorage.setItem("mandje", JSON.stringify(mandje));
+
+    document.getElementById("bijvoegenText").hidden=false
+    setTimeout(() => {
+        document.getElementById("bijvoegenText").hidden=true
+    }, 3000)
+
+
 }
 
 function filterBieren() {

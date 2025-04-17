@@ -19,6 +19,11 @@
 </header>
 
 <main class="container mx-auto py-8 px-4">
+  <div id="bijvoegenText" class="text-center text-2xl font-semibold sticky top-10" hidden>Bijgevoegd!✅</div>
+  <div class="mb-6">
+    <label for="zoekInput" class="block text-gray-700 text-sm font-bold mb-2">Zoek bier:</label>
+    <input type="text" id="zoekInput" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Zoek op naam of brouwer...">
+  </div>
   <section class="mb-12">
 
     <div id="bierenLijst">
@@ -37,6 +42,9 @@
             </th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Prijs
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Bestellen
             </th>
           </tr>
           </thead>
