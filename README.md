@@ -11,6 +11,9 @@ Main pagina:
 Alle bieren pagina: 
 ![image](https://github.com/user-attachments/assets/417277b9-d790-4da1-a71d-09c3d5dedc35)
 
+Alle brouwers pagina: 
+![image](https://github.com/user-attachments/assets/f10da504-f9d6-4db7-b0cf-e6d192988bcb)
+
 
 Mandje overzicht:
 ![image](https://github.com/user-attachments/assets/e55ee30a-19b5-4d52-be86-732a0aef9292)
@@ -18,3 +21,5 @@ Mandje overzicht:
 
 Formulier:
 ![image](https://github.com/user-attachments/assets/b323c2ce-8450-4838-803f-9a8ca1b45595)
+
+
